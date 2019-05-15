@@ -77,9 +77,7 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 Any output must be printed on stdout
 Any error message must be printed on stderr
 Here is a link to a GitHub repository that could help you making sure your errors are printed on stderr
-Tests
 
-We strongly encourage you to work all together on a set of tests
 
 The Monty language
 
