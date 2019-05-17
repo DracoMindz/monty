@@ -12,10 +12,11 @@ int main(int argc, char *argv[])
 		File *opfi;
 
 
+
 	if ( argc != 2) /* number of argc*/
 	{
 		printf(stderr,"USAGE: %s\n", argv[0]);/*check, program name*/
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	opfi = fopen(argv[1], "r"); /*read file*/
