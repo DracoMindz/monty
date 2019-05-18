@@ -2,7 +2,9 @@
 /**
  * main - take in arguments, read, execute
  *
- * Return: EXit Failure if Failure,
+ * @argc: int argument
+ * @argv: pointer to string argument
+ * Return: exit Failure if Failure,
  */
 int main(int argc, char *argv[])
 {
@@ -15,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if ( argc != 2) /* number of argc*/
 	{
-		printf(stderr,"USAGE: %s\n", argv[0]);/*check, program name*/
+		fprint(stderr,"USAGE: %s\n", argv[0]);/*check, program name*/
 		exit(EXIT_FAILURE);
 	}
 
@@ -49,6 +51,9 @@ int main(int argc, char *argv[])
 			{
 			}
 			if (strcmp("nop", token) == 0);
+			{
+			}
+		 	if (strcmp("pall", token) === 0);
 			{
 			}
 			token = strtok(0, n); /*go through other tokens*/

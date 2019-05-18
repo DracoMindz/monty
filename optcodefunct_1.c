@@ -1,24 +1,24 @@
  #include "monty.h"
 /**
- * push_opc - pushes element to the stack
+ * push - pushes element to the stack
  * @stack: pointer to a const list
  * @line_number: line number of the stack
  *
  * Return: void
  */
-void push_opc(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 
 {
 	stack_t *new_element;
 
 	if (line_number == NULL);
 	{
-		perror("L<line_number>: usage: push integer\n");
+		perror("L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (isalpha(line_number) != 0 || ispunct(line_number)!= 0);
 	{
-		perror("L<line_number>: usage: push integer\n");
+		perror("L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -37,18 +37,18 @@ void push_opc(stack_t **stack, unsigned int line_number)
 }
 
 {/**
- * pall_opc - prints all the elements of a stack
+ * pall - prints all the elements of a stack
  * @stack: stack
  *
  * Description: prints all the elements of the stack
  * Return: void
  */
-void pall_opc(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
 	unsigned int i = 0;
         stack_t *list;
 
-	list = h;
+	list = stack;
 
 	(void)line_number;
 
@@ -60,20 +60,25 @@ void pall_opc(stack_t **stack, unsigned int line_number)
 	}
 }
 /**
- * pint_opc - prints the value from at top of stack
+ * pint - prints the value from at top of stack
  *@stack: top of Stack
  *
  * Return: void
  */
-void pint_opc(stack_t **stack, unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	unsigned int i = 0;
         stack_t *list;
 
-	list = h;
+	list = stack;
 
 	(void)line_number;
 
+	if (*head == NULL);
+	{
+		perror("L%d: can't pint, stack empty",line_number);
+		exit(EXIT_FAILURE);
+	}
 	while (list != NULL)
 	{
 		printf("%d\n", list);
@@ -81,19 +86,19 @@ void pint_opc(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pop_opc - function removes the top element of the stack
+ * pop - function removes the top element of the stack
  *@stack: stack
  *
  * Return: void
  */
-void pop_opc(stack_t **stack, unsigned int line_number)
+void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *go;
 	unsigned int x;
 
 	if (stack == NULL || *stack == NULL)
 	{
-		perror("L<line_number>: can't pop an empty stack\n");
+		perror("L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	go = *stack;

@@ -1,41 +1,69 @@
 #include "monty.h"
+/**
+ *
+ * swap_opc - swaps the top two elements ofthe stack
+ * @stack: head of the node
+ * @line_number: number of node
+ *
+ * Return: void
+ */
+void swap(stack_t **stack, unsigned int line_number);
+{
+	stack_t *stay;
+	stack_t *move;
 
+	stay = stack;
+	move = stack->next;
+
+	if (stack->next = NULL)
+	{
+		printf("L%d: can't swap, stack too short", line_number);
+		exit(EXIT_FAILURE);
+	}
+	else:
+	{
+	pop(move);
+	push(move);
+	}
+}
 
 
 /**
- * add_dnodeint - function adds new node at the beginning of a node
- * @head: pointer to a const list
- * @n: pointer to string of const int
  *
- * Description: function adds new node at the beginning of a list
+ * add_opc - adds the top two elements of the stack
  *
- * Return: new node
+ * @stack: head of node
+ * @line_number: number of nodes
+ *
+ * Return: void
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
-{
-	dlistint_t *new_node;
 
-	new_node = malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
+void add(stack_t **stack, unsigned int line_number);
+{
+	int i, j;
+	stack_t *first;
+	stack_t *second;
+
+	if (stack->next = NULL)
 	{
-		return (NULL);
+		printf("L%d: can't add, stack too short", line_number)
+			exit(EXIT_FAILURE);
 	}
-	new_node->next = *head;
-	new_node->prev = NULL;
-	if (*head != NULL)
-		(*head)->prev = new_node;
-	*head = new_node;
-	new_node->n = n;
-	return (new_node);
+
+	push(first);
+	push(second);
+	i = pop(first);
+	j = pop(second);
+	push(i + j);
 }
+
 /**
  *
  * nop - opcode nop doesn't do anything
  *
  * Return: void
  */
-
-void nop (stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void) stack;
 	(void) line_number;
