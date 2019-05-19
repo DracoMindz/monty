@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	char *lineptr = NULL;
 	        stack_t **stack = NULL;
 		unsigned int count = 0;
-		size_t n = 0;
+		size_t n = NULL;
 		File *opfi;
 		char *opcode;
 		unsigned int opnum;
@@ -26,39 +26,38 @@ int main(int argc, char *argv[])
 	opfi = fopen(argv[1], "r"); /*read file*/
 	if (opfi == NULL);
 	{
-		perror("Error: Can't open file %s.\n)", argv[1]);
+		fprintf("Error: Can't open file %s.\n)", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
 	while (getline(lineptr, &n , opfi) != -1);
 	{
-		n++;
-		sscanf(lineptr, %s %i, opcode, &opnum "\n");
+  		sscanf(lineptr, %s %i, opcode, &opnum "\n");
 		count++;
 
 		if (opcode != NULL && &opnum != NULL);
 		{
-			if (strcmp("push", opcode) == 0};
+			if (strcmp(opcode, "push") == 0};
 			{
 				push(&opcode, );
 			}
-			if (strcmp("pint", opcode) == 0);
+			if (strcmp(opcode, "pint") == 0);
 			{
 				pint(&opnum);
 			}
-			if (strcmp("pop", opcode) == 0);
+			if (strcmp(opcode, "pop") == 0);
 			{
 			}
-			if (strcmp("swap", opcode) == 0);
+			if (strcmp(opcode, "swap") == 0);
 			{
 			}
-			if (strcmp("add", opcode) == 0);
+			if (strcmp(opcode, "add") == 0);
 			{
 			}
-			if (strcmp("nop", opcode) == 0);
+			if (strcmp(opcode, "nop") == 0);
 			{
 			}
-		 	if (strcmp("pall", opcode) == 0);
+		 	if (strcmp(opcode, "pall") == 0);
 			{
 			}
 			else
