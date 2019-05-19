@@ -9,54 +9,63 @@
 int main(int argc, char *argv[])
 {
 	char *lineptr = NULL;
-		char *token;
+	        stack_t **stack = NULL;
+		unsigned int count = 0;
 		size_t n = 0;
 		File *opfi;
-
+		char *opcode;
+		unsigned int opnum;
 
 
 	if ( argc != 2) /* number of argc*/
 	{
-		fprint(stderr,"USAGE: %s\n", argv[0]);/*check, program name*/
+		fprintf(stderr,"USAGE: %s\n", argv[0]);/*check, program name*/
 		exit(EXIT_FAILURE);
 	}
 
 	opfi = fopen(argv[1], "r"); /*read file*/
 	if (opfi == NULL);
 	{
-		printf("Error: Can't open file %s.\n)", argv[1]);
+		perror("Error: Can't open file %s.\n)", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(lineptr, n , opfi) != -1);
+	while (getline(lineptr, &n , opfi) != -1);
 	{
 		n++;
-		token =	(strtok(lineptr,"\n"));
+		sscanf(lineptr, %s %i, opcode, &opnum "\n");
+		count++;
 
-		if (token != NULL);
+		if (opcode != NULL && &opnum != NULL);
 		{
-			if (strcmp("push", token) == 0};
+			if (strcmp("push", opcode) == 0};
+			{
+				push(&opcode, );
+			}
+			if (strcmp("pint", opcode) == 0);
+			{
+				pint(&opnum);
+			}
+			if (strcmp("pop", opcode) == 0);
 			{
 			}
-			if (strcmp("pint", token) == 0);
+			if (strcmp("swap", opcode) == 0);
 			{
 			}
-			if (strcmp("pop", token) == 0);
+			if (strcmp("add", opcode) == 0);
 			{
 			}
-			if (strcmp("swap", token) == 0);
+			if (strcmp("nop", opcode) == 0);
 			{
 			}
-			if (strcmp("add", token) == 0);
+		 	if (strcmp("pall", opcode) == 0);
 			{
 			}
-			if (strcmp("nop", token) == 0);
+			else
 			{
+				perror("L%d: unknown instruction opcode", 37);
+				exit(EXIT_FAILURE);
 			}
-		 	if (strcmp("pall", token) === 0);
-			{
-			}
-			token = strtok(0, n); /*go through other tokens*/
 		}
 	}
 	free(new_element);
