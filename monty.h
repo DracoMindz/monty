@@ -45,5 +45,6 @@ void nop_opc (stack_t **stack, unsigned int line_number);
 void swap_opc(stack_t **stack, unsigned int line_number);
 void pop_opc(stack_t **stack, unsigned int line_number);
 void add_opc(stack_t **stack, unsigned int line_number);
+void *get_op_func(opcode, opnum);
 
 #endif
